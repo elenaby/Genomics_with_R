@@ -1,0 +1,5 @@
+patients <- read.delim("data/patients.txt", na.strings="", stringsAsFactors=T)
+glioma_colours <- c("gold", "dark green", "blue", "green", "red", "grey")
+par(mar=c(8,4,4,10), xpd=T)
+barplot(table(patients$subgroup, patients$location), las=2, col= glioma_colours, legend=T, args.legend=list(xjust=0, bty="n", cex=0.5),main="Location of Glioma subgroups")
+prop.table(table(patients$subgroup, patients$location),margin =  2)
